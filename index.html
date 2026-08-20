@@ -1,256 +1,73 @@
 <!DOCTYPE html>
- <html lang="es">
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>GastoLuz 2026 - Controla tu ahorro de luz en tiempo real</title>
-     
-     <!-- SEO & META -->
-     <meta name="description" content="Ahorra en tu factura de luz con GastoLuz. Control inteligente de aire acondicionado Inverter, precios reales con IVA y piloto automático. ¡Descárgala gratis!">
-     <meta name="keywords" content="ahorra luz, precio luz hoy, aire acondicionado, ahorro energetico, factura luz 2026, sevilla calor">
-     <meta name="author" content="AppSaiber">
-     <meta name="robots" content="index, follow">
-​
-     <!-- Open Graph (WhatsApp, Facebook, etc.) -->
-     <meta property="og:title" content="GastoLuz 2026: Tu aire acondicionado bajo control">
-     <meta property="og:description" content="Calcula tu gasto real con el precio actual de la luz y el clima de tu ciudad.">
-     <meta property="og:type" content="website">
-     <meta property="og:url" content="https://asurpan.github.io/GastoLuz/">
-     <meta property="og:image" content="https://raw.githubusercontent.com/asurpan/GastoLuz/main/icon.png">
-​
-     <!-- Google Fonts & Icons -->
-     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-​
-     <style>
-         :root {
-             --pool-blue: #00B4D8;
-             --deep-ocean: #03045E;
-             --soft-grey: #F8F9FA;
-             --white: #FFFFFF;
-         }
-​
-         * {
-             margin: 0;
-             padding: 0;
-             box-sizing: border-box;
-             font-family: 'Plus Jakarta Sans', sans-serif;
-         }
-​
-         body {
-             background-color: var(--soft-grey);
-             color: var(--deep-ocean);
-             line-height: 1.6;
-             overflow-x: hidden;
-         }
-​
-         .container {
-             max-width: 1000px;
-             margin: 0 auto;
-             padding: 0 20px;
-         }
-​
-         /* HEADER */
-         header {
-             padding: 40px 0;
-             text-align: center;
-         }
-​
-         .logo {
-             font-size: 32px;
-             font-weight: 800;
-             color: var(--pool-blue);
-             text-transform: uppercase;
-             letter-spacing: -1px;
-             display: flex;
-             align-items: center;
-             justify-content: center;
-             gap: 10px;
-         }
-​
-         /* HERO SECTION */
-         .hero {
-             padding: 20px 0 60px;
-             text-align: center;
-         }
-​
-         h1 {
-             font-size: 48px;
-             font-weight: 800;
-             margin-bottom: 20px;
-             color: var(--deep-ocean);
-             letter-spacing: -2px;
-         }
-​
-         .subtitle {
-             font-size: 18px;
-             color: #666;
-             max-width: 600px;
-             margin: 0 auto 40px;
-         }
-​
-         /* DOWNLOAD BUTTON */
-         .btn-download {
-             display: inline-flex;
-             align-items: center;
-             gap: 15px;
-             background-color: var(--deep-ocean);
-             color: var(--white);
-             padding: 18px 35px;
-             border-radius: 50px;
-             font-size: 18px;
-             font-weight: 700;
-             text-decoration: none;
-             transition: all 0.3s ease;
-             box-shadow: 0 10px 30px rgba(3, 4, 94, 0.2);
-         }
-​
-         .btn-download:hover {
-             transform: translateY(-5px);
-             box-shadow: 0 15px 40px rgba(3, 4, 94, 0.3);
-             background-color: var(--pool-blue);
-         }
-​
-         /* FEATURES */
-         .features {
-             display: grid;
-             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-             gap: 30px;
-             padding: 40px 0;
-         }
-​
-         .feature-card {
-             background: var(--white);
-             padding: 30px;
-             border-radius: 24px;
-             text-align: center;
-             transition: 0.3s;
-             border: 1px solid rgba(0, 180, 216, 0.1);
-         }
-​
-         .feature-card i {
-             font-size: 40px;
-             color: var(--pool-blue);
-             margin-bottom: 20px;
-         }
-​
-         .feature-card h3 {
-             margin-bottom: 10px;
-             font-size: 20px;
-         }
-​
-         .feature-card p {
-             font-size: 14px;
-             color: #666;
-         }
-​
-         /* SECURITY INFO SECTION */
-         .security-info {
-             background: #E9F8FB;
-             padding: 40px;
-             border-radius: 30px;
-             margin-top: 40px;
-             border: 2px dashed var(--pool-blue);
-         }
-​
-         .security-info h2 {
-             font-size: 24px;
-             margin-bottom: 15px;
-         }
-​
-         .security-info p {
-             font-size: 15px;
-             margin-bottom: 10px;
-         }
-​
-         .highlight {
-             font-weight: 700;
-             color: var(--pool-blue);
-         }
-​
-         /* FOOTER */
-         footer {
-             padding: 60px 0 40px;
-             text-align: center;
-             font-size: 13px;
-             color: #999;
-         }
-​
-         .footer-links a {
-             color: var(--pool-blue);
-             text-decoration: none;
-             margin: 0 10px;
-         }
-​
-         .legal-note {
-             margin-top: 20px;
-             max-width: 700px;
-             margin-left: auto;
-             margin-right: auto;
-             line-height: 1.4;
-         }
-​
-         /* MOBILE OPTIMIZATION */
-         @media (max-width: 600px) {
-             h1 { font-size: 36px; }
-             .subtitle { font-size: 16px; }
-         }
-     </style>
- </head>
- <body>
-​
-     <header class="container">
-         <div class="logo">
-             <i class="fas fa-bolt"></i> GastoLuz 2026
-         </div>
-     </header>
-​
-     <main class="container">
-         <section class="hero">
-             <h1>Ahorra luz sin mover un dedo.</h1>
-             <p class="subtitle">La primera aplicación con <span class="highlight">Piloto Automático</span> que calcula el gasto real de tu aire acondicionado según el clima de tu ciudad.</p>
-             
-             <a href="https://github.com/asurpan/GastoLuz/raw/main/app-release.apk" class="btn-download">
-                 <i class="fab fa-android"></i> Descargar APK gratis
-             </a>
-         </section>
-​
-         <section class="features">
-             <div class="feature-card">
-                 <i class="fas fa-robot"></i>
-                 <h3>Piloto Automático</h3>
-                 <p>Detecta tus horarios de uso y cuenta el gasto por ti. ¡Olvídate de la app!</p>
-             </div>
-             <div class="feature-card">
-                 <i class="fas fa-cloud-sun"></i>
-                 <h3>Clima en Vivo</h3>
-                 <p>Usa la temperatura real de tu calle para saber exactamente cuánto consume tu equipo.</p>
-             </div>
-             <div class="feature-card">
-                 <i class="fas fa-coins"></i>
-                 <h3>Factura Real</h3>
-                 <p>Precios oficiales de Red Eléctrica con el 21% de IVA incluido. Cero sorpresas.</p>
-             </div>
-         </section>
-​
-         <section class="security-info">
-             <h2><i class="fas fa-shield-halved"></i> ¿Por qué mi móvil dice que es insegura?</h2>
-             <p>Al descargar la aplicación fuera de la Play Store, Android muestra un aviso de <span class="highlight">"Archivo potencialmente dañino"</span>. Esto es normal.</p>
-             <p><strong>Es totalmente segura:</strong> GastoLuz no accede a tus contactos ni fotos. Android simplemente te avisa porque no la estás bajando de su tienda oficial. Puedes analizarla con cualquier antivirus al instalarla.</p>
-             <p>Pasos: Descargar > Abrir > Permitir instalación desde esta fuente.</p>
-         </section>
-     </main>
-​
-     <footer class="container">
-         <div class="footer-links">
-             <a href="privacidad.html">Privacidad</a> | 
-             <a href="mailto:appsaiber@gmail.com">Soporte</a>
-         </div>
-         <div class="legal-note">
-             GastoLuz ofrece 50 usos gratuitos para que pruebes su precisión. Posteriormente, requiere un pago único mediante Bizum. Esta app es informativa; el desarrollador no se hace responsable de variaciones con la factura eléctrica final.
-         </div>
-         <p style="margin-top: 20px;">&copy; 2026 AppSaiber. Diseñado para Sevilla y toda España.</p>
-     </footer>
-​
- </body>
- </html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GastoLuz 2026 - Controla tu ahorro real</title>
+    
+    <!-- SEO & META -->
+    <meta name="description" content="Ahorra luz con el Piloto Automático de GastoLuz. Precios reales con IVA incluido y clima dinámico. ¡Descárgala gratis!">
+    <meta name="keywords" content="ahorra luz, precio luz hoy, aire acondicionado, ahorro energetico, factura luz 2026">
+    <meta name="author" content="AppSaiber">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph (WhatsApp/Redes) -->
+    <meta property="og:title" content="GastoLuz 2026: Tu ahorro bajo control">
+    <meta property="og:description" content="Calcula tu gasto real con el precio de la luz y el clima de tu ciudad. ¡Descárgala!">
+    <meta property="og:image" content="https://raw.githubusercontent.com/asurpan/GastoLuz/main/icon.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+
+    <style>
+        :root { --pool-blue: #00B4D8; --deep-ocean: #03045E; --white: #FFFFFF; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        body { background: #f0f4f8; color: var(--deep-ocean); line-height: 1.5; padding: 20px; }
+        .card { background: var(--white); max-width: 500px; margin: 20px auto; border-radius: 30px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); text-align: center; }
+        .logo { font-size: 28px; font-weight: 800; color: var(--pool-blue); margin-bottom: 10px; }
+        h1 { font-size: 32px; letter-spacing: -1px; margin-bottom: 15px; color: var(--deep-ocean); }
+        .subtitle { color: #666; font-size: 16px; margin-bottom: 30px; }
+        .btn { display: block; background: var(--deep-ocean); color: white; padding: 18px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 18px; transition: 0.3s; margin-bottom: 20px; }
+        .btn:hover { transform: scale(1.03); background: var(--pool-blue); }
+        .features { text-align: left; margin: 30px 0; }
+        .feature { display: flex; gap: 15px; margin-bottom: 15px; align-items: center; }
+        .feature-icon { font-size: 24px; background: #e0f7fa; padding: 10px; border-radius: 12px; }
+        .security { background: #fff9c4; padding: 20px; border-radius: 20px; font-size: 14px; text-align: left; border: 1px solid #fbc02d; }
+        .legal { font-size: 11px; color: #999; margin-top: 30px; }
+        a.priv { color: var(--pool-blue); text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="logo">⚡ GastoLuz 2026</div>
+        <h1>Ahorra luz sin mover un dedo.</h1>
+        <p class="subtitle">La app con <b>Piloto Automático</b> que cuenta tu gasto según el calor real de tu ciudad.</p>
+        
+        <a href="https://github.com/asurpan/GastoLuz/raw/main/app-release.apk" class="btn">📲 Descargar APK Gratis</a>
+
+        <div class="features">
+            <div class="feature">
+                <span class="feature-icon">🤖</span>
+                <div><b>Piloto Automático:</b> Ella sola sabe tus horarios y cuenta el gasto.</div>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🌍</span>
+                <div><b>Clima Inteligente:</b> Detecta tu ciudad y ajusta el consumo.</div>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">💰</span>
+                <div><b>Precios Reales:</b> Con IVA del 21% ya incluido.</div>
+            </div>
+        </div>
+
+        <div class="security">
+            <b>🛡️ ¿Es segura la descarga?</b><br>
+            ¡Sí! Android avisa de "archivo dañino" siempre que descargas fuera de su tienda. GastoLuz es 100% segura, no pide datos personales y puedes pasarle el antivirus al instalar.
+        </div>
+
+        <div class="legal">
+            50 usos gratis. Luego pago único Bizum. Info: <a href="mailto:appsaiber@gmail.com">appsaiber@gmail.com</a><br><br>
+            <a href="privacidad.html" class="priv">Ver Política de Privacidad</a>
+        </div>
+    </div>
+</body>
+</html>
