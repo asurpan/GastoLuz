@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GastoLuz 2026 - Control inteligente de tu ahorro real</title>
+
+    <!-- SEO & META -->
+    <meta name="description" content="Ahorra luz con el Piloto Automático de GastoLuz. Precios reales con IVA incluido y clima dinámico de tu ciudad. ¡Descárgala gratis!">
+    <meta name="author" content="Jose Manuel Gonzalez Lorence">
+    <meta name="robots" content="index, follow">
+
+    <!-- Social Media -->
+    <meta property="og:title" content="GastoLuz 2026: Tu ahorro bajo control">
+    <meta property="og:description" content="Calcula tu gasto real con el precio de la luz y el clima de tu ciudad.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/asurpan/GastoLuz/main/icon.png">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #00B4D8;
+            --dark-blue: #03045E;
+            --white: #FFFFFF;
+            --bg-grey: #F8F9FA;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+        body { background-color: var(--white); color: var(--dark-blue); text-align: center; }
+
+        /* ANIMACIÓN DE LLENADO */
+        .filling-icon-container {
+            position: relative;
+            display: inline-block;
+            font-size: 80px;
+            margin-bottom: 20px;
+            height: 100px;
+            width: 80px;
+        }
+
+        .background-icon {
+            color: #eee;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .filling-icon {
+            color: var(--primary);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            overflow: hidden;
+            height: 0%; /* Empieza vacío */
+            animation: fillUp 3s ease-in-out infinite;
+        }
+
+        @keyframes fillUp {
+            0% { height: 0%; }
+            50% { height: 100%; }
+            100% { height: 100%; }
+        }
+
+        /* HEADER LOGO */
+        header { padding: 40px 0; }
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* HERO SECTION */
+        .hero { padding: 20px 20px 60px; }
+        h1 { font-size: 50px; font-weight: 800; letter-spacing: -2px; margin-bottom: 20px; line-height: 1.1; }
+        .hero p { font-size: 18px; color: #666; max-width: 600px; margin: 0 auto 40px; line-height: 1.6; }
+
+        /* DOWNLOAD BUTTON */
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 20px 45px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 700;
+            box-shadow: 0 15px 35px rgba(3, 4, 94, 0.3);
+            transition: 0.3s ease;
+        }
+        .btn-download:hover { transform: translateY(-3px); background-color: #050680; }
+
+        /* FEATURES SECTION */
+        .features-container {
+            background-color: var(--white);
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .feature-card {
+            background: var(--bg-grey);
+            padding: 50px 30px;
+            border-radius: 30px 30px 0 0; /* Match screenshot rounded tops */
+            width: 350px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .feature-card i { font-size: 45px; color: var(--primary); margin-bottom: 25px; }
+        .feature-card h3 { font-size: 22px; font-weight: 800; margin-bottom: 15px; }
+        .feature-card p { font-size: 15px; color: #555; line-height: 1.6; }
+
+        /* SECURITY & LEGAL */
+        .security-section { padding: 40px 20px; max-width: 800px; margin: 0 auto; }
+        .security-box {
+            background: #FFFBEB;
+            border: 2px dashed var(--primary);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: left;
+        }
+        .security-box h4 { color: #92400E; margin-bottom: 10px; font-size: 18px; }
+        .security-box p { color: #B45309; font-size: 14px; }
+
+        footer { padding: 60px 20px; color: #999; font-size: 13px; }
+        footer a { color: var(--primary); text-decoration: none; font-weight: 700; margin: 0 10px; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 36px; }
+            .feature-card { width: 100%; border-radius: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-bolt"></i> GastoLuz 2026
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="filling-icon-container">
+            <i class="fa-solid fa-bolt-lightning background-icon"></i>
+            <i class="fa-solid fa-bolt-lightning filling-icon"></i>
+        </div>
+        <h1>Ahorra luz sin mover un dedo.</h1>
+        <p>La primera aplicación con <b>Piloto Automático</b> que calcula el gasto real de tu aire acondicionado según el clima de tu ciudad.</p>
+
+        <a href="https://github.com/asurpan/GastoLuz/releases/download/v1.0/app-release.apk" class="btn-download">
+            <i class="fa-brands fa-android"></i> Descargar APK gratis
+        </a>
+    </section>
+
+    <section class="features-container">
+        <div class="feature-card">
+            <i class="fa-solid fa-robot"></i>
+            <h3>Piloto Automático</h3>
+            <p>Detecta tus horarios de uso y cuenta el gasto por ti. ¡Olvídate de la aplicación!</p>
+        </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-cloud-sun"></i>
+            <h3>Clima en Vivo</h3>
+            <p>Usa la temperatura real de tu calle para saber exactamente cuánto consume tu equipo.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-coins"></i>
+            <h3>Factura Real</h3>
+            <p>Precios oficiales de Red Eléctrica con el 21% de IVA incluido. Cero sorpresas.</p>
+        </div>
+    </section>
+
+    <div class="security-section">
+        <div class="security-box">
+            <h4>🛡️ ¿Es segura la descarga?</h4>
+            <p>¡Sí! Al descargar fuera de la tienda oficial, Android avisa de "archivo dañino". GastoLuz es 100% segura, no pide datos personales y puedes pasarle el antivirus al instalarla para tu tranquilidad.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>50 usos gratuitos incluidos. Posteriormente requiere pago único Bizum.</p>
+        <p style="margin: 15px 0;">
+            <a href="privacidad.html">Privacidad</a> | <a href="mailto:appsaiber@gmail.com">Soporte</a>
+        </p>
+        <p>&copy; 2026 Jose Manuel Gonzalez Lorence. Diseñado para España. <span id="download-count" style="font-size:7px; color:#efefef; margin-left:15px; cursor:default;"></span></p>
+    </footer>
+
+    <script>
+        fetch('https://api.github.com/repos/asurpan/GastoLuz/releases')
+            .then(response => response.json())
+            .then(data => {
+                let total = 0;
+                data.forEach(release => {
+                    release.assets.forEach(asset => {
+                        if (asset.name.endsWith('.apk')) total += asset.download_count;
+                    });
+                });
+                if (total >= 0) {
+                    // Se muestra camuflado como una referencia técnica: "ID: descargas / 1"
+                    document.getElementById('download-count').innerText = 'ID-REF: ' + total + '/1';
+                    document.getElementById('download-count').title = 'Contador de descargas activo';
+                }
+            })
+            .catch(() => {});
+    </script>
+
+</body>
+</html>
