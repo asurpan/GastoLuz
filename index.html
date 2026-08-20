@@ -3,21 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GastoLuz 2026 - Control inteligente de tu ahorro real</title>
+    <title>GastoLuz 2026 - Control inteligente de tu factura eléctrica</title>
 
     <!-- SEO & META -->
-    <meta name="description" content="Ahorra luz con el Piloto Automático de GastoLuz. Precios reales con IVA incluido y clima dinámico de tu ciudad. ¡Descárgala gratis!">
+    <meta name="description" content="Ahorra luz con el Piloto Automático de GastoLuz. Precios reales con IVA incluido y clima dinámico de tu ciudad. ¡Descárgala gratis y controla tu aire acondicionado!">
+    <meta name="keywords" content="ahorra luz, precio luz hoy, aire acondicionado, ahorro energetico, factura luz 2026, clima sevilla, ahorro inverter">
     <meta name="author" content="Jose Manuel Gonzalez Lorence">
     <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://asurpan.github.io/GastoLuz/">
 
-    <!-- Social Media -->
+    <!-- Social Media (OG) -->
     <meta property="og:title" content="GastoLuz 2026: Tu ahorro bajo control">
-    <meta property="og:description" content="Calcula tu gasto real con el precio de la luz y el clima de tu ciudad.">
+    <meta property="og:description" content="Calcula tu gasto real con el precio actual de la luz y el clima de tu ciudad. ¡Descárgala gratis!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://asurpan.github.io/GastoLuz/">
     <meta property="og:image" content="https://raw.githubusercontent.com/asurpan/GastoLuz/main/icon.png">
+    <meta property="og:locale" content="es_ES">
 
-    <!-- Fonts & Icons -->
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GastoLuz 2026 - Ahorra luz sin mover un dedo">
+    <meta name="twitter:description" content="Control inteligente de aire acondicionado Inverter con precios reales.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/asurpan/GastoLuz/main/icon.png">
+
+    <!-- JSON-LD para Google (SEO Pro) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "GastoLuz 2026",
+      "operatingSystem": "Android",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "description": "Calcula el gasto real de aire acondicionado Inverter basado en precios PVPC y clima real.",
+      "author": {
+        "@type": "Person",
+        "name": "Jose Manuel Gonzalez Lorence"
+      }
+    }
+    </script>
+
+    <!-- Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" media="print" onload="this.media='all'">
 
     <style>
         :root {
@@ -56,17 +90,17 @@
             left: 0;
             z-index: 2;
             overflow: hidden;
-            height: 0%; /* Empieza vacío */
-            animation: fillUp 3s ease-in-out infinite;
+            height: 0%;
+            animation: fillUp 3.5s ease-in-out infinite;
         }
 
         @keyframes fillUp {
-            0% { height: 0%; }
-            50% { height: 100%; }
-            100% { height: 100%; }
+            0% { height: 0%; opacity: 0.5; }
+            50% { height: 100%; opacity: 1; }
+            80% { height: 100%; opacity: 1; }
+            100% { height: 100%; opacity: 0.8; }
         }
 
-        /* HEADER LOGO */
         header { padding: 40px 0; }
         .logo {
             font-size: 28px;
@@ -79,12 +113,10 @@
             gap: 10px;
         }
 
-        /* HERO SECTION */
         .hero { padding: 20px 20px 60px; }
         h1 { font-size: 50px; font-weight: 800; letter-spacing: -2px; margin-bottom: 20px; line-height: 1.1; }
         .hero p { font-size: 18px; color: #666; max-width: 600px; margin: 0 auto 40px; line-height: 1.6; }
 
-        /* DOWNLOAD BUTTON */
         .btn-download {
             display: inline-flex;
             align-items: center;
@@ -97,11 +129,10 @@
             font-size: 20px;
             font-weight: 700;
             box-shadow: 0 15px 35px rgba(3, 4, 94, 0.3);
-            transition: 0.3s ease;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .btn-download:hover { transform: translateY(-3px); background-color: #050680; }
+        .btn-download:hover { transform: translateY(-5px) scale(1.03); background-color: #050680; }
 
-        /* FEATURES SECTION */
         .features-container {
             background-color: var(--white);
             padding: 60px 20px;
@@ -115,7 +146,7 @@
         .feature-card {
             background: var(--bg-grey);
             padding: 50px 30px;
-            border-radius: 30px 30px 0 0; /* Match screenshot rounded tops */
+            border-radius: 30px 30px 0 0;
             width: 350px;
             text-align: center;
             transition: 0.3s;
@@ -124,7 +155,6 @@
         .feature-card h3 { font-size: 22px; font-weight: 800; margin-bottom: 15px; }
         .feature-card p { font-size: 15px; color: #555; line-height: 1.6; }
 
-        /* SECURITY & LEGAL */
         .security-section { padding: 40px 20px; max-width: 800px; margin: 0 auto; }
         .security-box {
             background: #FFFBEB;
@@ -210,7 +240,6 @@
                     });
                 });
                 if (total >= 0) {
-                    // Se muestra camuflado como una referencia técnica: "ID: descargas / 1"
                     document.getElementById('download-count').innerText = 'ID-REF: ' + total + '/1';
                     document.getElementById('download-count').title = 'Contador de descargas activo';
                 }
