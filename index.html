@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GastoLuz - Calculadora de Consumo de Aire Acondicionado en tiempo real</title>
+    <title>GastoLuz 2.0 - Calculadora de Consumo de Aire Acondicionado y Luz</title>
 
     <!-- SEO & META -->
-    <meta name="description" content="¿Cuánto te cuesta poner el aire hoy? Calcula el gasto real de tu AC basándote en el precio de la luz, el clima exterior y las frigorías de tu equipo. ¡Evita sorpresas en tu factura!">
-    <meta name="keywords" content="consumo aire acondicionado euros, calculadora gasto aire acondicionado, precio luz aire acondicionado, cuantas frigorias consume, factura luz aire acondicionado 2026, ahorro inverter">
+    <meta name="description" content="Calcula el coste real de tu aire acondicionado y calefacción según el precio de la luz por horas, la temperatura y tu país. ¡Ahorra en tu factura!">
+    <meta name="keywords" content="calculadora gasto aire acondicionado, precio luz hoy, consumo aire acondicionado euros, factura luz 2026, ahorro inverter">
     <meta name="theme-color" content="#00B4D8">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -16,8 +16,8 @@
     <link rel="canonical" href="https://asurpan.github.io/GastoLuz/">
 
     <!-- Social Media (OG) -->
-    <meta property="og:title" content="GastoLuz 2026: ¿Cuánto gasta tu Aire Acondicionado?">
-    <meta property="og:description" content="Calcula tu gasto real de AC con el precio de la luz y el clima de tu ciudad. ¡Paga solo lo justo!">
+    <meta property="og:title" content="GastoLuz 2.0: ¿Cuánto te cuesta el aire acondicionado hoy?">
+    <meta property="og:description" content="Calcula tu gasto real de aire acondicionado y calefacción con el precio de la luz y el clima de tu ciudad en tiempo real.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://asurpan.github.io/GastoLuz/">
     <meta property="og:image" content="https://asurpan.github.io/GastoLuz/icon.png?v=2">
@@ -27,7 +27,7 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="GastoLuz 2026 - Calcula tu consumo de AC">
+    <meta name="twitter:title" content="GastoLuz 2.0 - Calcula tu consumo de AC">
     <meta name="twitter:description" content="Control real del gasto de aire acondicionado con precios oficiales y clima.">
     <meta name="twitter:image" content="https://asurpan.github.io/GastoLuz/icon.png">
 
@@ -36,7 +36,7 @@
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "GastoLuz 2026",
+      "name": "GastoLuz 2.0",
       "operatingSystem": "Android",
       "applicationCategory": "UtilitiesApplication",
       "offers": {
@@ -44,7 +44,7 @@
         "price": "0",
         "priceCurrency": "EUR"
       },
-      "description": "Calcula el gasto real de aire acondicionado Inverter basado en frigorías, precios PVPC y clima real.",
+      "description": "Calcula el gasto real de aire acondicionado y calefacción basado en frigorías, precios por hora y clima real.",
       "author": {
         "@type": "Person",
         "name": "Jose Manuel González Lorence"
@@ -151,7 +151,7 @@
         .feature-card {
             background: var(--bg-grey);
             padding: 50px 30px;
-            border-radius: 30px 30px 0 0;
+            border-radius: 30px;
             width: 350px;
             text-align: center;
             transition: 0.3s;
@@ -160,16 +160,11 @@
         .feature-card h3 { font-size: 22px; font-weight: 800; margin-bottom: 15px; }
         .feature-card p { font-size: 15px; color: #555; line-height: 1.6; }
 
-        .security-section { padding: 40px 20px; max-width: 800px; margin: 0 auto; }
-        .security-box {
-            background: #FFFBEB;
-            border: 2px dashed var(--primary);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: left;
+        .flags-bar {
+            margin: 30px 0;
+            font-size: 24px;
+            letter-spacing: 6px;
         }
-        .security-box h4 { color: #92400E; margin-bottom: 10px; font-size: 18px; }
-        .security-box p { color: #B45309; font-size: 14px; }
 
         footer { padding: 60px 20px; color: #999; font-size: 13px; }
         footer a { color: var(--primary); text-decoration: none; font-weight: 700; margin: 0 10px; }
@@ -184,7 +179,7 @@
 
     <header>
         <div class="logo">
-            <i class="fa-solid fa-bolt"></i> GastoLuz 2026
+            <i class="fa-solid fa-bolt"></i> GastoLuz 2.0
         </div>
     </header>
 
@@ -193,64 +188,42 @@
             <i class="fa-solid fa-bolt-lightning background-icon"></i>
             <i class="fa-solid fa-bolt-lightning filling-icon"></i>
         </div>
-        <h1>¿Cuánto te cuesta el aire hoy?</h1>
-        <p>GastoLuz es la herramienta definitiva para saber el <b>coste real en euros</b> de tu climatización. Ajustada a tu tarifa, tu ciudad y la potencia de tu máquina.</p>
+        <h1>¿Cuánto te cuesta el aire o la calefacción hoy?</h1>
+        <p>GastoLuz calcula el <b>coste real en tu moneda local (€, $, £, R$)</b> de tu climatización. Basado en el precio de la luz por horas, el clima en tiempo real de tu ciudad y la potencia de tu equipo.</p>
 
-        <a href="https://github.com/asurpan/GastoLuz/releases/download/v1.0/app-release.apk" class="btn-download">
-            <i class="fa-brands fa-android"></i> Descargar APK gratis
+        <div class="flags-bar">
+            🇪🇸 🇺🇸 🇬🇧 🇵🇹 🇫🇷 🇩🇪 🇮🇹 🇲🇽 🇧🇷 🇨🇱 🇨🇴 🇦🇷
+        </div>
+
+        <a href="https://play.google.com/store/apps/details?id=com.sagon.gastoluz" class="btn-download">
+            <i class="fa-brands fa-google-play"></i> Descargar en Google Play
         </a>
     </section>
 
     <section class="features-container">
         <div class="feature-card">
+            <i class="fa-solid fa-earth-americas"></i>
+            <h3>Multipaís y Moneda</h3>
+            <p>Disponible para España, EE. UU., Reino Unido, Europa y Latinoamérica con conversión automática a tu moneda local.</p>
+        </div>
+        <div class="feature-card">
             <i class="fa-solid fa-gauge-high"></i>
-            <h3>Consumo Real</h3>
-            <p>Calculamos los kWh exactos que consume tu compresor según el diferencial térmico entre tu casa y la calle.</p>
+            <h3>Consumo Real e Inverter</h3>
+            <p>Calculamos los kWh exactos que consume tu compresor según el diferencial térmico entre la calle y tu vivienda.</p>
         </div>
         <div class="feature-card">
-            <i class="fa-solid fa-euro-sign"></i>
-            <h3>Coste en Factura</h3>
-            <p>Precios oficiales PVPC con impuestos y cargos incluidos. Sabrás cuánto pagarás a final de mes.</p>
-        </div>
-        <div class="feature-card">
-            <i class="fa-solid fa-snowflake"></i>
-            <h3>Optimizado Inverter</h3>
-            <p>Algoritmo específico para equipos Inverter: detecta cuándo baja el consumo al llegar a la temperatura objetivo.</p>
+            <i class="fa-solid fa-bell"></i>
+            <h3>Alertas a las 20:30h</h3>
+            <p>Notificación automática cada tarde con las tarifas de mañana y tono de aviso para planificar tu ahorro.</p>
         </div>
     </section>
 
-    <div class="security-section">
-        <div class="security-box">
-            <h4>🛡️ ¿Es segura la descarga?</h4>
-            <p>¡Sí! Al descargar fuera de la tienda oficial, Android avisa de "archivo dañino". GastoLuz es 100% segura, no pide datos personales y puedes pasarle el antivirus al instalarla para tu tranquilidad.</p>
-        </div>
-    </div>
-
     <footer>
-        <p>50 usos gratuitos incluidos. Posteriormente requiere pago único Bizum.</p>
         <p style="margin: 15px 0;">
-            <a href="privacidad.html">Privacidad</a> | <a href="mailto:appsaiber@gmail.com">Soporte</a>
+            <a href="privacidad.html">Política de Privacidad</a> | <a href="mailto:appsaiber@gmail.com">Soporte</a>
         </p>
-        <p>&copy; 2026 Jose Manuel González Lorence. Diseñado para España. <span id="download-count" style="font-size:7px; color:#efefef; margin-left:15px; cursor:default;"></span></p>
+        <p>&copy; 2026 Jose Manuel González Lorence. GastoLuz v2.0</p>
     </footer>
-
-    <script>
-        fetch('https://api.github.com/repos/asurpan/GastoLuz/releases')
-            .then(response => response.json())
-            .then(data => {
-                let total = 0;
-                data.forEach(release => {
-                    release.assets.forEach(asset => {
-                        if (asset.name.endsWith('.apk')) total += asset.download_count;
-                    });
-                });
-                if (total >= 0) {
-                    document.getElementById('download-count').innerText = 'ID-REF: ' + total + '/1';
-                    document.getElementById('download-count').title = 'Contador de descargas activo';
-                }
-            })
-            .catch(() => {});
-    </script>
 
 </body>
 </html>
